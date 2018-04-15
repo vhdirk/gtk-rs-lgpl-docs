@@ -20,6 +20,7 @@ pub enum Library {
     Pango,
     SourceView,
     PangoCairo,
+    GMime
 }
 
 fn docs(lib: Library) -> Option<&'static str> {
@@ -30,6 +31,7 @@ fn docs(lib: Library) -> Option<&'static str> {
         Library::Gdk => Some(include_str!("../gdk/docs.md")),
         Library::GdkPixbuf => Some(include_str!("../gdk-pixbuf/docs.md")),
         Library::Gtk => Some(include_str!("../gtk/docs.md")),
+        Library::GMime => Some(include_str!("../gmime/docs.md")),
         _ => None,
     }
 }
@@ -44,6 +46,7 @@ fn vendor_docs(lib: Library) -> Option<&'static str> {
         Library::Gtk => Some(include_str!("../gtk/vendor.md")),
         Library::SourceView => Some(include_str!("../gtksource/vendor.md")),
         Library::PangoCairo => Some(include_str!("../pangocairo/vendor.md")),
+        Library::GMime => Some(include_str!("../gmime/vendor.md")),
         _ => None,
     }
 }
